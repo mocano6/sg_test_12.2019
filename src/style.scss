@@ -1,0 +1,16 @@
+.main {
+  .inputs {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .in-city {
+      border: 0;
+      background: white;
+    }
+  }
+}
+body {
+  background-color: red;
+}
