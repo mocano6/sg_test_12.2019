@@ -5,11 +5,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .in-city {
+    .in-country {
       border: 0;
       background: white;
       margin-left: 1em;
     }
+    .countries {
+      display: none;
+    }    
   }
 }
 body {
