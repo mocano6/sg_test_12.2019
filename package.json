@@ -1,0 +1,35 @@
+{
+  "name": "sg_test",
+  "version": "0.1.0",
+  "description": "Test sg",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mocano6/sg_test_12.2019.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Łukasz Ferszt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mocano6/sg_test_12.2019/issues"
+  },
+  "homepage": "https://github.com/mocano6/sg_test_12.2019#readme",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "webpack-cli": "3.3.10"
+  },
+  "dependencies": {
+    "webpack": "^4.41.4",
+    "css-loader": "^3.4.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.2"
+  }
+}
