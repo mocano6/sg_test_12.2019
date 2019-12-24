@@ -14,10 +14,14 @@
   <main class="main">
     <section class="inputs">
       <label for="city">Write country name:</label>
-      <input type="text" list="countries" name="" id="country" class="in-country">
       <datalist id="countries" class="countries"></datalist>
+      <input type="text" list="countries" name="" id="country" class="in-country">
+      <button class="btn" id="button">Show cities</button>
     </section>
-    <section class="pull-cities"></section>
+    <section class="pull-cities">
+      <h2 class="city-name"></h2>
+      <ul class="ul city-space"></ul>
+    </section>
     <section class="cities-info"></section>
   </main>
 </body>

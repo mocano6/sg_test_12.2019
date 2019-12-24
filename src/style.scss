@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
 .main {
   .inputs {
+    background: rgb(199, 137, 66);
     width: 100%;
     height: 10vh;
     display: flex;
@@ -10,11 +16,32 @@
       background: white;
       margin-left: 1em;
     }
+    .btn {
+      margin-left: 1em;
+      border: 0;
+      padding: 0.25em 0.75em;
+    }
     .countries {
       display: none;
     }    
   }
-}
-body {
-  background-color: red;
+  .pull-cities {
+    background: rgb(119, 90, 212);
+    .city-name {
+      font-style: 2em;
+      text-align: center;
+      padding: 1em 0;
+    }
+    .ul {
+      .li {
+        padding: 1em 0;
+        border-top: 2px solid #000;
+        text-align: center;
+        width: 60%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
 }
