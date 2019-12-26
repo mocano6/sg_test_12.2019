@@ -1,3 +1,4 @@
+import cityInfo from './cityinfo';
 
 const citySpace = document.querySelector('.city-space');
 // Prototype/class to create object with important information
@@ -9,11 +10,11 @@ class Cities {
       this.value = value;
   }
 }
-export default (country) => {
+export default async (country) => {
   // Arrays for temporary and final result
   let cityValX = [];
   let cityPull = [];
-  
+
   const API_URL = `https://api.openaq.org/v1/latest?limit=9999&country=${country}&order_by=city`;
 
   // Fetch func start
@@ -68,13 +69,17 @@ export default (country) => {
       citySpace.innerHTML = '';
       arr.forEach(element => {          
         let cityLi = document.createElement('li');
-        cityLi.classList.add('li')
+        cityLi.classList.add('li');
+        let cityInfoEl = cityInfo(element.city[0]);
         cityLi.innerHTML = 
         `
           <span>${element.city} (${element.location})</span><span>${element.value} µg/m³</span> <span>Parameter: ${element.param}</span>
+          ${cityInfoEl}
         `;
         citySpace.appendChild(cityLi);
-      });  
+        cityInfo(element.city);
+        
+      });
     }
     setCitiesUl(cityPull);
   });
