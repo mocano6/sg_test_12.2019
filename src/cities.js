@@ -65,23 +65,22 @@ export default async (country) => {
       cityPull.push(new Cities(city, cityLocation, paramName, paramVal));
     }
     // Return 10 pulled citys
-    function setCitiesUl(arr) {
+    async function setCitiesUl(arr) {
       citySpace.innerHTML = '';
-      arr.forEach(element => {          
+      await arr.forEach(element => {
         let cityLi = document.createElement('li');
         cityLi.classList.add('li');
-        let cityInfoEl = cityInfo(element.city[0]);
-        cityLi.innerHTML = 
+        let cityInfoEl = cityInfo(element.city);
+        cityLi.innerHTML =
         `
           <span>${element.city} (${element.location})</span><span>${element.value} µg/m³</span> <span>Parameter: ${element.param}</span>
           ${cityInfoEl}
         `;
-        citySpace.appendChild(cityLi);
-        cityInfo(element.city);
-        
+
+      citySpace.appendChild(cityLi);
       });
     }
-    setCitiesUl(cityPull);
+      setCitiesUl(cityPull);
   });
   
 };
