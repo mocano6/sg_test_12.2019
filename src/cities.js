@@ -53,7 +53,6 @@ export default async (country) => {
       }, []);
       return x;
     }
-    
     cityValX = delDuplicate(cityValX);
     
     // Add 10 highest val to array cityPull
@@ -67,17 +66,21 @@ export default async (country) => {
     // Return 10 pulled citys
     async function setCitiesUl(arr) {
       citySpace.innerHTML = '';
-      await arr.forEach(element => {
+      arr.forEach(async element => {
         let cityLi = document.createElement('li');
         cityLi.classList.add('li');
         let cityInfoEl = cityInfo(element.city);
+
+        let val = await cityInfoEl.then((response) => response);
+
+        console.log(val);
+        
         cityLi.innerHTML =
         `
           <span>${element.city} (${element.location})</span><span>${element.value} µg/m³</span> <span>Parameter: ${element.param}</span>
-          ${cityInfoEl}
+          <span class="city-space-details">${val}</span>
         `;
-
-      citySpace.appendChild(cityLi);
+        citySpace.appendChild(cityLi);
       });
     }
       setCitiesUl(cityPull);

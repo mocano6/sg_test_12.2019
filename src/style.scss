@@ -41,6 +41,11 @@
         margin: auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        .city-space-details {
+          grid-column: 1/4;
+          margin-top: 1em;
+          background: rgba(90, 198, 212, 0.274);
+        }
       }
     }
   }
