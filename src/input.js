@@ -56,10 +56,8 @@ let compareEl;
     const boolRes = data(countries);
     if (boolRes) {
       // Set selected country API data from input val
-      //console.log(apiSet(boolRes));
       // Add country name to localestorage
       localStorage.setItem('countryName', compareEl);
-      console.log(compareEl);
       // Func load country
       loadCountry(compareEl);
       

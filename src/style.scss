@@ -1,61 +1,89 @@
 * {
   margin: 0;
   padding: 0;
-
+  font-family: Sans-Serif;
 }
-.main {
+.header {
+  background: #9e9e9e;
+  padding: 1em 0;
   .inputs {
-    background: rgb(199, 137, 66);
-    width: 100%;
-    height: 10vh;
+    max-width: 600px;
+    margin: auto;
+    min-height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: wrap;
     .in-country {
       border: 0;
       background: white;
-      margin-left: 1em;
+      margin: auto 0 auto auto;
+      font-size: 1em;
+      font-weight: 600;
+      padding-left: 0.5em;
+      height: 2.5em;
+    }
+    label {
+      margin: 0.5em auto;
+      font-size: 1.25em;
+      font-weight: 800;
     }
     .btn {
-      margin-left: 1em;
       border: 0;
+      font-size: 1em;
+      font-weight: 600;
       padding: 0.25em 0.75em;
+      margin: auto auto auto 0;
+      cursor: pointer;
+      
+      height: 2.5em;
     }
     .countries {
       display: none;
-    }    
+    } 
   }
+}
+.main {
   .pull-cities {
-    background: rgb(119, 90, 212);
+    background: #fff;
     .city-name {
-      font-style: 2em;
+      font-size: 2em;
       text-align: center;
       padding: 1em 0;
     }
     .ul {
       .li {
         padding: 1em 0;
-        border-top: 2px solid #000;
+        border-top: 1px solid #696969;
         text-align: center;
-        width: 60%;
+        max-width: 920px;
         margin: auto;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr .1fr;
+        grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+        align-items: center;
+        .city {
+          font-weight: 600;
+        }
         .sh-ico {
           cursor: pointer;
           pointer-events: auto;
-          background: #f7f7f7;
-          height: 20px;
-          width: 20px;
+          background: #666666;
+          color: #fff;
+          height: 25px;
+          width: 25px;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 1.5em;
           font-weight: 800;
           border-radius: 50%;
+          line-height: 0;
+          margin: .5em auto;
+
         }
         span {
           pointer-events: none;
+          margin: .25em 0;
         }
         &.accordion {
           transition: max-height 0.2s ease-out;

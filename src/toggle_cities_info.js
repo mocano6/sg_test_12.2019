@@ -8,11 +8,11 @@ export default () => {
 
       if (elParent.style.maxHeight) {
         elParent.style.maxHeight = null;
-        el.innerHTML = '+';
+        el.innerHTML = '&#43;';
       }
       else {
         elParent.style.maxHeight = elParent.scrollHeight + "px";
-        el.innerHTML = '-';
+        el.innerHTML = '&#8722;';
       }
     }
   });

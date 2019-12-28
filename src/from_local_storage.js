@@ -8,8 +8,8 @@ export default () => {
     let storedCountry = localStorage.getItem('countryName');
     loadCountry(storedCountry);
   }
-  let storedCities = JSON.parse(localStorage.getItem('localeCitiesArray'));
   if (localStorage.getItem('localeCitiesArray')) {
+    let storedCities = JSON.parse(localStorage.getItem('localeCitiesArray'));
     setCitiesUl(storedCities, citySpace);
   }
 };

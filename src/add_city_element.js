@@ -1,7 +1,6 @@
-import cityInfo from './cityinfo';
+import cityInfo from './append_cities_description';
 import toggleCitiesInfo from './toggle_cities_info';
 
-let localeCitiesArray= [];
 
 class Cities {
   constructor(city, location, param, value, cityInfo) {
@@ -14,6 +13,7 @@ class Cities {
 }
 
 export default async (arr, spacerElement) => {
+  let localeCitiesArray= [];
   spacerElement.innerHTML = '';
   arr.forEach(async element => {
     let cityLi = document.createElement('li');
@@ -22,23 +22,27 @@ export default async (arr, spacerElement) => {
     let cityInfoEl = cityInfo(element.city);
 
     let cityDescription = await cityInfoEl.then((response) => response);
+    if (cityDescription === undefined) {
+      cityDescription = 'No information about this city/place';
+    }
+    
     
     cityLi.innerHTML =
     `
-      <span>${element.city} (${element.location})</span><span>${element.value} µg/m³</span> <span>Parameter: ${element.param}</span><span class="sh-ico">+</span>
+      <span class='city'>${element.city} (${element.location})</span><span>${element.value} µg/m³</span> <span>Parameter: ${element.param}</span><span class="sh-ico">+</span>
       <span class="city-space-details panel">${cityDescription}</span>
     `;
     localeCitiesArray
     .push(new Cities(
       element.city, 
-      element.location, 
-      element.value, 
-      element.param,
+      element.location,
+      element.param, 
+      element.value,
       cityDescription
       ));
-      // Set array of items to localestorage
-      await localStorage.setItem('localeCitiesArray', await JSON.stringify(localeCitiesArray));
-      
+      // Remove old and Set array of items to localestorage;
+      localStorage.setItem('localeCitiesArray', JSON.stringify(localeCitiesArray));
+
     spacerElement.appendChild(cityLi);
 
   });
