@@ -71,6 +71,7 @@
         .city-space-details {
           grid-column: 1/5;
           margin-top: 1em;
+          transition: max-height 0.2s ease-out;
         }
       }
     }

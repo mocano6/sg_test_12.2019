@@ -1,6 +1,6 @@
 // Import
 import apiSet from './cities';
-import loadCities from './loadcity';
+import loadCountry from './load_country_name';
 
 // Elements
 const inputVal = document.querySelector('#country');
@@ -57,9 +57,12 @@ let compareEl;
     if (boolRes) {
       // Set selected country API data from input val
       //console.log(apiSet(boolRes));
-      
+      // Add country name to localestorage
+      localStorage.setItem('countryName', compareEl);
+      console.log(compareEl);
       // Func load country
-      loadCities(compareEl);
+      loadCountry(compareEl);
+      
       // Func load cities
       apiSet(boolRes);
     }
