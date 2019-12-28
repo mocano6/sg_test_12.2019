@@ -40,11 +40,37 @@
         width: 60%;
         margin: auto;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr .1fr;
+        .sh-ico {
+          cursor: pointer;
+          pointer-events: auto;
+          background: #f7f7f7;
+          height: 20px;
+          width: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5em;
+          font-weight: 800;
+          border-radius: 50%;
+        }
+        span {
+          pointer-events: none;
+        }
+        &.accordion {
+          transition: max-height 0.2s ease-out;
+          .panel {
+            padding: 0 1em;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+          }
+        }
         .city-space-details {
-          grid-column: 1/4;
+          grid-column: 1/5;
           margin-top: 1em;
-          background: rgba(90, 198, 212, 0.274);
         }
       }
     }

@@ -1,4 +1,5 @@
 import cityInfo from './cityinfo';
+import toggleCitiesInfo from './toggle_cities_info';
 
 const citySpace = document.querySelector('.city-space');
 // Prototype/class to create object with important information
@@ -69,19 +70,20 @@ export default async (country) => {
       arr.forEach(async element => {
         let cityLi = document.createElement('li');
         cityLi.classList.add('li');
+        cityLi.classList.add('accordion');
         let cityInfoEl = cityInfo(element.city);
 
-        let val = await cityInfoEl.then((response) => response);
-
-        console.log(val);
+        let cityDescription = await cityInfoEl.then((response) => response);
         
         cityLi.innerHTML =
         `
-          <span>${element.city} (${element.location})</span><span>${element.value} µg/m³</span> <span>Parameter: ${element.param}</span>
-          <span class="city-space-details">${val}</span>
+          <span>${element.city} (${element.location})</span><span>${element.value} µg/m³</span> <span>Parameter: ${element.param}</span><span class="sh-ico">+</span>
+          <span class="city-space-details panel">${cityDescription}</span>
         `;
         citySpace.appendChild(cityLi);
+
       });
+      await toggleCitiesInfo();
     }
       setCitiesUl(cityPull);
   });
