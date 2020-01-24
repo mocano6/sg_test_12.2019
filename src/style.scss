@@ -61,6 +61,8 @@
         display: grid;
         grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
         align-items: center;
+        
+        transition: max-height 0.2s ease-out;
         .city {
           font-weight: 600;
         }
@@ -91,7 +93,6 @@
             padding: 0 1em;
             background-color: white;
             display: none;
-            overflow: hidden;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
           }

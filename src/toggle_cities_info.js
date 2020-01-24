@@ -5,13 +5,16 @@ export default () => {
     if (el.classList.contains('sh-ico')) {
       let elParent = el.parentNode;
       elParent.classList.toggle('accordion');
+      let elInfo = elParent.lastChild;
+      console.log(elParent, elInfo, 'tototo');
+      
 
-      if (elParent.style.maxHeight) {
+      if (elInfo.style.maxHeight) {
         elParent.style.maxHeight = null;
         el.innerHTML = '&#43;';
       }
       else {
-        elParent.style.maxHeight = elParent.scrollHeight + "px";
+        elInfo.style.maxHeight = elParent.scrollHeight + "px";
         el.innerHTML = '&#8722;';
       }
     }

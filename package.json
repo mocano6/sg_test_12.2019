@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "test",
+    "run": " run index.html",
     "watch": "webpack --watch",
     "build": "webpack"
   },
